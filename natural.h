@@ -1,5 +1,5 @@
 #include "arrayofT.h"
-
+#include <string>
 
 class natural : public arrayof<char>
 {
@@ -14,7 +14,7 @@ class natural : public arrayof<char>
     public:
       natural(int);
       natural(const char*);
-      //natural(string);
+      natural(std::string);
 
       friend natural operator + (const natural &, const natural &);
       friend natural operator - (const natural &, const natural &);

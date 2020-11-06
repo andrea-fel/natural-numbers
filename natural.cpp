@@ -115,14 +115,14 @@ natural::natural(const char* digits) : arrayof(strlen(digits))
     this->clean0();
 }
 
-/*natural::natural(string digits) : arrayof(digits.size())
+natural::natural(std::string digits) : arrayof(digits.size())
 {
     for (int i=0; i<nelem; i++)
     {
         adr[i] = digits[nelem-i-1]-48;
     }
     this->clean0();
-}*/
+}
 
 
 natural operator + (const natural & n, const natural & m)
