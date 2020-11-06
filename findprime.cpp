@@ -6,38 +6,33 @@ using namespace std;
 
 int main()
 {
-    /*natural trial1 = "11";
-    natural trial2 = "777777";
-
-    trial1 = trial1^trial2;
-    trial1.display();*/
-
     natural prime(const int);
     natural prime(const natural &);
     natural public_key(const int, const natural &);
     natural private_key(const natural &, const natural &);
-    for (int n = 0; n < 10; n++){
+
     natural p(0), q(0), r(0), e(0), d(0);
-    int digits = 30;
+    int digits = 20;
 
     p = prime(digits);
     q = prime(digits);
 
     r = (p-1)*(q-1);
 
-    e = public_key(9,r);
+    e = public_key(7,r);
     auto start = chrono::steady_clock::now();
     d = private_key(e,r);
     auto end = chrono::steady_clock::now();
     r.display();    
     e.display();
     d.display();
+    ((e*d)%r).display();
 
 
 
     chrono::duration<double> elapsed_seconds = end-start;
     cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
-    }
+
     return 0;
 }
 
